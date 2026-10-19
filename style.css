@@ -1,0 +1,240 @@
+:root {
+  --bg: #02001e;
+  --nav: #0f0f3c;
+  --text: #ffffff;
+  --muted: #b9b6d6;
+  --accent: #a65fd8;
+  --card: #0d0b33;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+body {
+  font-family: "Poppins", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Navbar */
+nav {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; justify-content: space-between; align-items: center;
+  height: 56px; padding: 0 clamp(16px, 14vw, 200px);
+  background: var(--nav);
+}
+.logo { font-size: 18px; font-weight: 500; }
+nav ul { display: flex; gap: 32px; list-style: none; font-size: 13px; font-weight: 500; }
+nav ul a:hover { color: var(--accent); }
+
+/* Hero */
+#home {
+  min-height: calc(100vh - 56px);
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 40px; padding: 40px clamp(16px, 11vw, 160px);
+}
+#home h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 500; line-height: 1.5; max-width: 520px; }
+#home h1 span.highlight-name { color: var(--accent); }
+#home .typed-text { color: var(--accent); }
+#home .hero-art { width: min(380px, 40vw); flex-shrink: 0; }
+.hero-art svg { width: 100%; height: auto; display: block; }
+.btn {
+  display: inline-block; margin-top: 28px; padding: 10px 26px;
+  border: 1.5px solid var(--accent); border-radius: 999px;
+  font-size: 14px; font-weight: 500; transition: background .2s;
+}
+.btn:hover { background: var(--accent); }
+
+/* Sections */
+section.page { padding: 80px clamp(16px, 11vw, 160px); border-top: 1px solid #1a1850; }
+section.page h2 { font-size: 28px; font-weight: 500; margin-bottom: 24px; }
+section.page p { color: var(--muted); max-width: 640px; }
+
+/* Content Box Design for About / Learning */
+.content-box {
+  background: var(--card);
+  border: 1px solid #1f1d5a;
+  border-radius: 12px;
+  padding: 28px;
+  max-width: 900px;
+}
+.content-box p {
+  color: var(--muted);
+  max-width: 100%;
+}
+
+/* Skills Section Styling */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  max-width: 900px;
+}
+
+.skills-box {
+  background: var(--card);
+  border: 1px solid #1f1d5a;
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.skills-box h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: var(--text);
+  border-bottom: 1px solid #1f1d5a;
+  padding-bottom: 8px;
+}
+
+.skills-box ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.skills-box li {
+  margin-bottom: 6px;
+}
+
+/* Education Section Styling */
+.edu-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 900px;
+}
+.edu-box {
+  background: var(--card);
+  border: 1px solid #1f1d5a;
+  border-radius: 12px;
+  padding: 24px;
+}
+.edu-box h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text);
+  border-bottom: 1px solid #1f1d5a;
+  padding-bottom: 8px;
+}
+.edu-row {
+  display: flex;
+  gap: 12px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: var(--muted);
+}
+.edu-row span {
+  min-width: 130px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* Grid & Project Cards */
+.grid { 
+  display: grid; 
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+  gap: 20px; 
+  max-width: 900px; 
+}
+
+.card { 
+  background: var(--card); 
+  border: 1px solid #1f1d5a; 
+  border-radius: 12px; 
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.card h3 { 
+  font-size: 18px; 
+  font-weight: 600; 
+  margin-bottom: 10px; 
+  color: var(--text);
+}
+
+.card p.project-desc { 
+  font-size: 13.5px; 
+  line-height: 1.6;
+  color: var(--muted); 
+  margin-bottom: 16px;
+}
+
+.card-footer {
+  margin-top: auto;
+}
+
+.tech-heading {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: 0.3px;
+}
+
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.tech-tags span {
+  background: rgba(166, 95, 216, 0.12);
+  color: #c9a0f0;
+  border: 1px solid rgba(166, 95, 216, 0.3);
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 999px;
+  letter-spacing: 0.3px;
+}
+
+.card a { 
+  display: inline-block; 
+  font-size: 13.5px; 
+  font-weight: 500;
+  color: var(--accent); 
+}
+
+.card a:hover { 
+  text-decoration: underline; 
+}
+
+/* Contact form */
+form { display: grid; gap: 14px; max-width: 480px; margin-top: 24px; }
+input, textarea {
+  width: 100%; padding: 12px 14px; font: inherit; color: var(--text);
+  background: var(--card); border: 1px solid #2a2870; border-radius: 8px;
+}
+textarea { min-height: 120px; resize: vertical; }
+form button {
+  justify-self: start; padding: 10px 26px; font: inherit; font-weight: 500;
+  color: var(--text); background: var(--accent); border: 0; border-radius: 999px; cursor: pointer;
+}
+.chips { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; list-style: none; }
+.chips li { padding: 6px 16px; font-size: 13px; border: 1px solid #2a2870; border-radius: 999px; background: var(--bg); color: var(--text); }
+.links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 20px; font-size: 14px; }
+.links a { color: var(--accent); }
+.links a:hover { text-decoration: underline; }
+footer { text-align: center; padding: 24px; font-size: 13px; color: var(--muted); background: var(--nav); }
+
+@media (max-width: 760px) {
+  nav ul { gap: 14px; font-size: 12px; }
+  .logo { font-size: 15px; }
+  #home { flex-direction: column-reverse; justify-content: center; text-align: center; }
+  #home .hero-art { width: 70%; }
+  .edu-row { flex-direction: column; gap: 2px; }
+  .edu-row span { min-width: unset; }
+}
